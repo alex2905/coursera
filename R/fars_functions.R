@@ -1,4 +1,7 @@
 # Documenting functions
+# Author: Alexander Kurtz
+# Date: 2018-01-05
+# Last update: 2018-01-05
 
 #' Reading a csv file into R
 #'
