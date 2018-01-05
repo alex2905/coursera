@@ -157,9 +157,6 @@ fars_summarize_years <- function(years) {
 #' @inheritParams make_filename
 #' @return A plot, showing the locations (longitud and latitude) of accidents in
 #'         the chosen state and year
-#' @examples
-#' fars_map_state(1,2014)
-#' fars_map_state(9,2013)
 fars_map_state <- function(state.num, year) {
   filename <- make_filename(year)
   data <- fars_read(filename)
