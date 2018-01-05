@@ -21,6 +21,7 @@
 #' @importFrom readr read_csv
 #' @importFrom dplyr tbl_df
 #' @return A tibble dataframe containing the information of the csv file
+#' @export
 #' @examples
 #' filename <- "accident_2013.csv.bz2"
 #' accident_2013 <- fars_read(filename)
@@ -49,6 +50,7 @@ fars_read <- function(filename) {
 #' @param year A string or number indicating the year for naming the file
 #' @return A character string, indicating the zipped file name like
 #'         accident_year.csv.bz2
+#' @export
 #' @examples
 #' zipped_file <- make_filename(2013)
 #' make_filename(2014)
@@ -81,6 +83,7 @@ make_filename <- function(year) {
 #' @return A dataframe containing the month and the year of each observation
 #'         of the zipped file - the year coming as input and has to be part of
 #'         the file name.
+#' @export
 #' @examples
 #' fars_read_years(list(2013,2014,2015))
 #' fars_read_years(2013)
@@ -120,6 +123,7 @@ fars_read_years <- function(years) {
 #' @inheritParams fars_read_years
 #' @return A dataframe containing the number of each month and the number of
 #'         observations for each month in each of the input years
+#' @export
 #' @examples
 #' fars_summarize_years(list(2013,2014,2015))
 #' fars_summarize_years(2013)
@@ -157,6 +161,10 @@ fars_summarize_years <- function(years) {
 #' @inheritParams make_filename
 #' @return A plot, showing the locations (longitud and latitude) of accidents in
 #'         the chosen state and year
+#' @export
+#' @examples
+#' fars_map_state(state.num = 1, year = 2014)
+#' fars_map_state(state.num = 9, year = 2013)
 fars_map_state <- function(state.num, year) {
   filename <- make_filename(year)
   data <- fars_read(filename)

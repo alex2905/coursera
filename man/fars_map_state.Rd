@@ -33,3 +33,7 @@ Errors occur if there are errors in make_filename or fars_read or the
 state.num cannot be converted t integer.
 Additionally errors occur if the observations are out of bounds of the state.
 }
+\examples{
+fars_map_state(state.num = 1, year = 2014)
+fars_map_state(state.num = 9, year = 2013)
+}
