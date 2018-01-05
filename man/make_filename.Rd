@@ -2,10 +2,28 @@
 % Please edit documentation in R/fars_functions.R
 \name{make_filename}
 \alias{make_filename}
-\title{Function make_filename}
+\title{Creating a compromized file name}
 \usage{
 make_filename(year)
 }
+\arguments{
+\item{year}{A string or number indicating the year for naming the file}
+}
+\value{
+A character string, indicating the zipped file name like
+        accident_year.csv.bz2
+}
 \description{
-Description here
+The function make filename creates a pre-defined name of a bz2 zipped file,
+which is accident_year.csv.bz2. The year is the input of the function.
+A warning occurs, if the input parameter is a single value but cannot be
+converted into a integer, because year is then NA.
+}
+\details{
+An error occurs, if the input cannot be coerced to type integer - e.g. for
+dataframes.
+}
+\examples{
+zipped_file <- make_filename(2013)
+make_filename(2014)
 }
