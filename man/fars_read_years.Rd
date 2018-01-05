@@ -33,6 +33,6 @@ Errors occur in the same cases as for make_filename, but not for fars_read,
 since this is part of the tryCatch.
 }
 \examples{
-fars_read_years(list(2013,2014,2015))
-fars_read_years(2013)
+# fars_read_years(list(2013,2014,2015))
+# fars_read_years(2013)
 }

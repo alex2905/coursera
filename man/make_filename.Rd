@@ -24,6 +24,6 @@ An error occurs, if the input cannot be coerced to type integer - e.g. for
 dataframes.
 }
 \examples{
-zipped_file <- make_filename(2013)
-make_filename(2014)
+# zipped_file <- make_filename(2013)
+# make_filename(2014)
 }
