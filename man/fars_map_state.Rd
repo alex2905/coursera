@@ -36,6 +36,4 @@ Additionally errors occur if the observations are out of bounds of the state.
 \examples{
 fars_map_state(1,2014)
 fars_map_state(9,2013)
-\dontrun{
-fars_map_state(15,2013) # leading to a mentioned error}
 }
