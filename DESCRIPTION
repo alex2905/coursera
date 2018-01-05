@@ -13,5 +13,7 @@ RoxygenNote: 6.0.1
 Suggests: knitr,
     rmarkdown
 Imports: dplyr,
-    maps
+    maps,
+    readr,
+    tidyr
 VignetteBuilder: knitr
