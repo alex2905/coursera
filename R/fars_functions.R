@@ -19,9 +19,9 @@
 #'             tbl_df)
 #' @return A tibble dataframe containing the information of the csv file
 #' @examples
-#' filename <- "data/accident_2013.csv"
+#' filename <- "accident_2013.csv.bz2"
 #' accident_2013 <- fars_read(filename)
-#' filename <- "data/accident_2015.csv"
+#' filename <- "accident_2015.csv.bz2"
 #' accident_2013 <- fars_read(filename)
 fars_read <- function(filename) {
   if(!file.exists(filename))
