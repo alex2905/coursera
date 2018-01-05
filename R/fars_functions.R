@@ -160,8 +160,6 @@ fars_summarize_years <- function(years) {
 #' @examples
 #' fars_map_state(1,2014)
 #' fars_map_state(9,2013)
-#' \dontrun{
-#' fars_map_state(15,2013) # leading to a mentioned error}
 fars_map_state <- function(state.num, year) {
   filename <- make_filename(year)
   data <- fars_read(filename)
