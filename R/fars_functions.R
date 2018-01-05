@@ -13,10 +13,8 @@
 #' Error occurs if more than one filename is passed.
 #'
 #' @param filename A string containing the path for the file
-#' @importFrom readr read_csv Function to read csv files, identifying
-#'             automatically the type of each column
-#' @importFrom dplyr tbl_df Function for converting tables into tibbles (tbl,
-#'             tbl_df)
+#' @importFrom readr read_csv
+#' @importFrom dplyr tbl_df
 #' @return A tibble dataframe containing the information of the csv file
 #' @examples
 #' filename <- "accident_2013.csv.bz2"
@@ -72,8 +70,6 @@ make_filename <- function(year) {
 #' Errors occur in the same cases as for make_filename, but not for fars_read,
 #' since this is part of the tryCatch.
 #'
-#' @importFrom fars_read
-#' @importFrom make_filename
 #' @importFrom dplyr mutate select
 #' @param years A list/vector containing the years for which data should be
 #'              loaded and month + year are extracted
@@ -114,9 +110,6 @@ fars_read_years <- function(years) {
 #' Error occur, in the same cases as for fars_read_years.
 #' If there are no errors in this helper function, everything works well.
 #'
-#' @importFrom fars_read
-#' @importFrom make_filename
-#' @importFrom fars_read_years
 #' @importFrom dplyr bind_rows group_by summarize
 #' @importFrom tidyr spread
 #' @inheritParams fars_read_years
@@ -152,13 +145,11 @@ fars_summarize_years <- function(years) {
 #' state.num cannot be converted t integer.
 #' Additionally errors occur if the observations are out of bounds of the state.
 #'
-#' @importFrom make_filename
-#' @importFrom fars_read
 #' @importFrom dplyr filter
 #' @importFrom maps map
 #' @importFrom graphics points
 #' @param state.num A number, indicating the number of states for filtering
-#' @inheritParams make_file_name
+#' @inheritParams make_filename
 #' @return A plot, showing the locations (longitud and latitude) of accidents in
 #'         the chosen state and year
 #' @examples
