@@ -1,3 +1,5 @@
+# Documenting functions
+
 #' Reading a csv file into R
 #'
 #' The function fars_read gets as input the path of the file name to load into R.
