@@ -22,9 +22,17 @@ illustrate the correctness of the documentation and creation of a package.
 The purpose of the functions itself,is to show the accidents per state per 
 country for each year, where each year corresponds to a separate dataset.
 
-## Vignette Info
+# Function Info
 
-Note the various macros within the `vignette` section of the metadata block above. These are required in order to instruct R how to build the vignette. Note that you should change the `title` field and the `\VignetteIndexEntry` to match the title of your vignette.
+## Generic functions
+
+There are two generic functions: \n
+`fars_read` and `make_filename` which are just built for this special case to
+load the zipped bz2 file to R and create the approriate name of the zipped file.
+
+## fars_read_years
+
+## fars_summarize_years
 
 ## Styles
 
