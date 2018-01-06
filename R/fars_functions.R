@@ -80,6 +80,7 @@ make_filename <- function(year) {
 #' \code{fars_read}, since this is part of the tryCatch.
 #'
 #' @importFrom dplyr mutate select
+#' @importFrom magrittr %>%
 #' @param years A list/vector containing the years for which data should be
 #'              loaded and month + year are extracted
 #' @return A dataframe containing the month and the year of each observation
@@ -122,7 +123,6 @@ fars_read_years <- function(years) {
 #'
 #' @importFrom dplyr bind_rows group_by summarize
 #' @importFrom tidyr spread
-#' @importFrom magrittr %>%
 #' @inheritParams fars_read_years
 #' @return A dataframe containing the number of each month and the number of
 #'         observations for each month in each of the input years
