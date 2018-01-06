@@ -51,7 +51,6 @@ fars_read <- function(filename) {
 #' @export
 #' @examples
 #' make_filename(2013)
-#' make_filename(2014)
 make_filename <- function(year) {
   year <- as.integer(year)
   system.file("extdata", sprintf("accident_%d.csv.bz2", year),
@@ -162,6 +161,7 @@ fars_summarize_years <- function(years) {
 #' @return A plot, showing the locations (longitud and latitude) of accidents in
 #'         the chosen state and year
 #' @export
+#' @examples
 #' # fars_map_state(state.num = 9, year = 2013)
 fars_map_state <- function(state.num, year) {
   filename <- make_filename(year)

@@ -32,5 +32,4 @@ If there are no errors in this help function, everything works well.
 }
 \examples{
 # fars_summarize_years(2013)
-# fars_summarize_years(2013:2015)
 }
