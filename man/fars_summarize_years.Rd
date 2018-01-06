@@ -31,6 +31,5 @@ Error occur, in the same cases as for \code{fars_read_years}.
 If there are no errors in this help function, everything works well.
 }
 \examples{
-# fars_summarize_years(list(2013,2014,2015))
 # fars_summarize_years(2013)
 }

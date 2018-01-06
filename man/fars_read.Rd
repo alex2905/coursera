@@ -27,8 +27,6 @@ which are in csv format but do not have the default delimiters.
 Error occurs if more than one filename is passed.
 }
 \examples{
-# filename <- "data/accident_2013.csv.bz2"
+# filename <- "inst/extdata/accident_2013.csv.bz2"
 # accident_2013 <- fars_read(filename)
-# filename <- "data/accident_2015.csv.bz2"
-# accident_2015 <- fars_read(filename)
 }

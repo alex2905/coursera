@@ -35,6 +35,5 @@ or the state.num cannot be converted to integer.
 Additionally errors occur if the observations are out of bounds of the state.
 }
 \examples{
-# fars_map_state(state.num = 1, year = 2014)
 # fars_map_state(state.num = 9, year = 2013)
 }
