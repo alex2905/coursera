@@ -1,5 +1,10 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+travis badge
+============
+
+![Build Status](https://api.travis-ci.org/alex2905/coursera.svg?branch=master)
+
 coursera
 ========
 

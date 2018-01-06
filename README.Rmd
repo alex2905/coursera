@@ -12,6 +12,10 @@ knitr::opts_chunk$set(
 )
 ```
 
+# travis badge
+![Build Status](https://api.travis-ci.org/alex2905/coursera.svg?branch=master)
+
+
 # coursera
 
 This package and the functions in it, use data from US National Highway Traffic 
