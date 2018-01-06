@@ -80,7 +80,6 @@ make_filename <- function(year) {
 #' \code{fars_read}, since this is part of the tryCatch.
 #'
 #' @importFrom dplyr mutate select
-#' @importFrom magrittr %>%
 #' @param years A list/vector containing the years for which data should be
 #'              loaded and month + year are extracted
 #' @return A dataframe containing the month and the year of each observation
