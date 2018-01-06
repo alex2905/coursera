@@ -122,6 +122,7 @@ fars_read_years <- function(years) {
 #'
 #' @importFrom dplyr bind_rows group_by summarize
 #' @importFrom tidyr spread
+#' @importFrom magrittr %>%
 #' @inheritParams fars_read_years
 #' @return A dataframe containing the number of each month and the number of
 #'         observations for each month in each of the input years
