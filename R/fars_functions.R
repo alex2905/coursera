@@ -23,8 +23,8 @@
 #' @return A tibble dataframe containing the information of the csv file
 #' @export
 #' @examples
-#' filename <- "inst/extdata/accident_2013.csv.bz2"
-#' accident_2013 <- fars_read(filename)
+#' # filename <- "inst/extdata/accident_2013.csv.bz2"
+#' # accident_2013 <- fars_read(filename)
 fars_read <- function(filename) {
   if(!file.exists(filename))
     stop("file '", filename, "' does not exist")
