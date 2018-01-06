@@ -17,20 +17,22 @@ A dataframe containing the month and the year of each observation
         the file name.
 }
 \description{
-The function fars_read_years can load several files corresponding to their
-year into R, since it gets a list/vector of years as input and returns
+The function \code{fars_read_years} can load several files corresponding to
+their year into R, since it gets a list/vector of years as input and returns
 the month and years of that dataframes.
 It is still possible to only load one dataset and manipulate it.
 The lapply functionality allows to create for each element (year of years)
-the zipped file name, check whether it exists with tryCatch and if it throws
-an error write out a warning that the year is invalid and return NULL.
-If the file exists, the inner of tryCatch is executed and the data is loaded
-into R. Then a new column year is created, which is the current element of
-years chosen in lapply and only Month and year of the dataset are selected.
+the zipped file name, check whether it exists with \code{tryCatch} and if it
+throws an error, write out a warning that the year is invalid and return
+\code{NULL}.
+If the file exists, the inner of \code{tryCatch} is executed and the data is
+loaded into R. Then a new column year is created, which is the current
+element of years chosen in lapply and only Month and year of the dataset are
+selected.
 }
 \details{
-Errors occur in the same cases as for make_filename, but not for fars_read,
-since this is part of the tryCatch.
+Errors occur in the same cases as for \code{make_filename}, but not for
+\code{fars_read}, since this is part of the tryCatch.
 }
 \examples{
 # fars_read_years(list(2013,2014,2015))

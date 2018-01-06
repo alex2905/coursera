@@ -16,8 +16,9 @@ A plot, showing the locations (longitud and latitude) of accidents in
         the chosen state and year
 }
 \description{
-The function fars_map_state reads the bz2 zipped file into R via the functions
-make_filename and fars_read. Converts the state.num to integers.
+The function \code{fars_map_state} reads the bz2 zipped file into R via the
+functions \code{make_filename} and \code{fars_read}.
+Converts the state.num to integers.
 Checks whether the state number exists in the dataset - if not, it stops and
 writes out the invalid state number. If the state number exists, the data is
 filtered by this state.
@@ -29,8 +30,8 @@ The same logic is applied for LATITUDE values over 90.
 Then, the locations of the accidents in that state are plotted.
 }
 \details{
-Errors occur if there are errors in make_filename or fars_read or the
-state.num cannot be converted t integer.
+Errors occur if there are errors in \code{make_filename} or \code{fars_read}
+or the state.num cannot be converted to integer.
 Additionally errors occur if the observations are out of bounds of the state.
 }
 \examples{

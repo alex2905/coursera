@@ -16,19 +16,19 @@ A dataframe containing the number of each month and the number of
         observations for each month in each of the input years
 }
 \description{
-The function fars_summarize_years uses the fars_read_years function to
-load the datasets and creates a list of each dataset containing only the
-month and year per observation.
+The function \code{fars_summarize_years} uses the \code{fars_read_years}
+function toload the datasets and creates a list of each dataset containing
+only the month and year per observation.
 All this data is combined, via binding all rows together.
-Next the data is grouped by month and year that the number of observations
-of each grouping can be measued.
-In the last step year and the number of observations per month and year (=n)
-are spread, meaning new columns are created for each element of the year
-column and it's value is the number of n in this month.
+Next, the data is grouped by month and year that the number of observations
+of each grouping can be measured.
+In the last step, year and the number of observations per month and year
+\code{(=n)} are spread, meaning new columns are created for each element of
+the year column and it's value is the number of \code{n} in this month.
 }
 \details{
-Error occur, in the same cases as for fars_read_years.
-If there are no errors in this helper function, everything works well.
+Error occur, in the same cases as for \code{fars_read_years}.
+If there are no errors in this help function, everything works well.
 }
 \examples{
 # fars_summarize_years(list(2013,2014,2015))

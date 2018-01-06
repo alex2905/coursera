@@ -5,13 +5,13 @@
 
 #' Reading a csv file into R
 #'
-#' The function fars_read gets as input the path of the file name to load into R.
-#' It checks whether the file exists and if not, stops.
+#' The function \code{fars_read} gets as input the path of the file name to load
+#' into R. It checks whether the file exists and if not, stops.
 #' If the file exists, with correct format, it is loaded into R with the
-#' read_csv function from the readr package and messages,which type each column
-#' is, are suppressed.
-#' At least, the function uses the tbl_df function from the dplyr package,
-#' although there is no need to do that.
+#' \code{read_csv} function from the \code{readr} package and messages,which
+#' type each column is, are suppressed.
+#' At least, the function uses the \code{tbl_df} function from the \code{dplyr}
+#' package, although there is no need to do that.
 #'
 #' Erros occur by files which exist but are not in (zipped) csv format, or files
 #' which are in csv format but do not have the default delimiters.
@@ -23,10 +23,10 @@
 #' @return A tibble dataframe containing the information of the csv file
 #' @export
 #' @examples
-#' # filename <- "accident_2013.csv.bz2"
-#' # accident_2013 <- fars_read(filename)
-#' # filename <- "accident_2015.csv.bz2"
-#' # accident_2013 <- fars_read(filename)
+#' filename <- "data/accident_2013.csv.bz2"
+#' accident_2013 <- fars_read(filename)
+#' filename <- "data/accident_2015.csv.bz2"
+#' accident_2015 <- fars_read(filename)
 fars_read <- function(filename) {
   if(!file.exists(filename))
     stop("file '", filename, "' does not exist")
@@ -39,8 +39,8 @@ fars_read <- function(filename) {
 
 #' Creating a compromized file name
 #'
-#' The function make filename creates a pre-defined name of a bz2 zipped file,
-#' which is accident_year.csv.bz2. The year is the input of the function.
+#' The function \code{make_filename} creates a pre-defined name of a bz2 zipped
+#' file, which is accident_year.csv.bz2. The year is the input of the function.
 #' A warning occurs, if the input parameter is a single value but cannot be
 #' converted into a integer, because year is then NA.
 #'
@@ -52,32 +52,35 @@ fars_read <- function(filename) {
 #'         accident_year.csv.bz2
 #' @export
 #' @examples
-#' # zipped_file <- make_filename(2013)
-#' # make_filename(2014)
+#' zipped_file <- make_filename(2013)
+#' make_filename(2014)
 make_filename <- function(year) {
   year <- as.integer(year)
-  sprintf("accident_%d.csv.bz2", year)
+  sprintf("data/accident_%d.csv.bz2", year)
 }
 
 
 #' Reading the bz2 zipped files with corresponding year in their name and
 #' selecting only months and years of this dataset.
 #'
-#' The function fars_read_years can load several files corresponding to their
-#' year into R, since it gets a list/vector of years as input and returns
+#' The function \code{fars_read_years} can load several files corresponding to
+#' their year into R, since it gets a list/vector of years as input and returns
 #' the month and years of that dataframes.
 #' It is still possible to only load one dataset and manipulate it.
 #' The lapply functionality allows to create for each element (year of years)
-#' the zipped file name, check whether it exists with tryCatch and if it throws
-#' an error write out a warning that the year is invalid and return NULL.
-#' If the file exists, the inner of tryCatch is executed and the data is loaded
-#' into R. Then a new column year is created, which is the current element of
-#' years chosen in lapply and only Month and year of the dataset are selected.
+#' the zipped file name, check whether it exists with \code{tryCatch} and if it
+#' throws an error, write out a warning that the year is invalid and return
+#' \code{NULL}.
+#' If the file exists, the inner of \code{tryCatch} is executed and the data is
+#' loaded into R. Then a new column year is created, which is the current
+#' element of years chosen in lapply and only Month and year of the dataset are
+#' selected.
 #'
-#' Errors occur in the same cases as for make_filename, but not for fars_read,
-#' since this is part of the tryCatch.
+#' Errors occur in the same cases as for \code{make_filename}, but not for
+#' \code{fars_read}, since this is part of the tryCatch.
 #'
 #' @importFrom dplyr mutate select
+#' @importFrom magrittr %>%
 #' @param years A list/vector containing the years for which data should be
 #'              loaded and month + year are extracted
 #' @return A dataframe containing the month and the year of each observation
@@ -105,21 +108,22 @@ fars_read_years <- function(years) {
 #' Reading bz2 zipped data files and creating a summary of the number of
 #' observations per month per year (years correspond to datasets)
 #'
-#' The function fars_summarize_years uses the fars_read_years function to
-#' load the datasets and creates a list of each dataset containing only the
-#' month and year per observation.
+#' The function \code{fars_summarize_years} uses the \code{fars_read_years}
+#' function toload the datasets and creates a list of each dataset containing
+#' only the month and year per observation.
 #' All this data is combined, via binding all rows together.
-#' Next the data is grouped by month and year that the number of observations
-#' of each grouping can be measued.
-#' In the last step year and the number of observations per month and year (=n)
-#' are spread, meaning new columns are created for each element of the year
-#' column and it's value is the number of n in this month.
+#' Next, the data is grouped by month and year that the number of observations
+#' of each grouping can be measured.
+#' In the last step, year and the number of observations per month and year
+#' \code{(=n)} are spread, meaning new columns are created for each element of
+#' the year column and it's value is the number of \code{n} in this month.
 #'
-#' Error occur, in the same cases as for fars_read_years.
-#' If there are no errors in this helper function, everything works well.
+#' Error occur, in the same cases as for \code{fars_read_years}.
+#' If there are no errors in this help function, everything works well.
 #'
 #' @importFrom dplyr bind_rows group_by summarize
 #' @importFrom tidyr spread
+#' @importFrom magrittr %>%
 #' @inheritParams fars_read_years
 #' @return A dataframe containing the number of each month and the number of
 #'         observations for each month in each of the input years
@@ -138,8 +142,9 @@ fars_summarize_years <- function(years) {
 
 #' Plotting the locations of accidents for one state in one year with its bounds
 #'
-#' The function fars_map_state reads the bz2 zipped file into R via the functions
-#' make_filename and fars_read. Converts the state.num to integers.
+#' The function \code{fars_map_state} reads the bz2 zipped file into R via the
+#' functions \code{make_filename} and \code{fars_read}.
+#' Converts the state.num to integers.
 #' Checks whether the state number exists in the dataset - if not, it stops and
 #' writes out the invalid state number. If the state number exists, the data is
 #' filtered by this state.
@@ -150,8 +155,8 @@ fars_summarize_years <- function(years) {
 #' The same logic is applied for LATITUDE values over 90.
 #' Then, the locations of the accidents in that state are plotted.
 #'
-#' Errors occur if there are errors in make_filename or fars_read or the
-#' state.num cannot be converted t integer.
+#' Errors occur if there are errors in \code{make_filename} or \code{fars_read}
+#' or the state.num cannot be converted to integer.
 #' Additionally errors occur if the observations are out of bounds of the state.
 #'
 #' @importFrom dplyr filter

@@ -13,13 +13,13 @@ fars_read(filename)
 A tibble dataframe containing the information of the csv file
 }
 \description{
-The function fars_read gets as input the path of the file name to load into R.
-It checks whether the file exists and if not, stops.
+The function \code{fars_read} gets as input the path of the file name to load
+into R. It checks whether the file exists and if not, stops.
 If the file exists, with correct format, it is loaded into R with the
-read_csv function from the readr package and messages,which type each column
-is, are suppressed.
-At least, the function uses the tbl_df function from the dplyr package,
-although there is no need to do that.
+\code{read_csv} function from the \code{readr} package and messages,which
+type each column is, are suppressed.
+At least, the function uses the \code{tbl_df} function from the \code{dplyr}
+package, although there is no need to do that.
 }
 \details{
 Erros occur by files which exist but are not in (zipped) csv format, or files
@@ -27,8 +27,8 @@ which are in csv format but do not have the default delimiters.
 Error occurs if more than one filename is passed.
 }
 \examples{
-# filename <- "accident_2013.csv.bz2"
-# accident_2013 <- fars_read(filename)
-# filename <- "accident_2015.csv.bz2"
-# accident_2013 <- fars_read(filename)
+filename <- "data/accident_2013.csv.bz2"
+accident_2013 <- fars_read(filename)
+filename <- "data/accident_2015.csv.bz2"
+accident_2015 <- fars_read(filename)
 }
