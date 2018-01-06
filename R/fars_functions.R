@@ -23,8 +23,8 @@
 #' @return A tibble dataframe containing the information of the csv file
 #' @export
 #' @examples
-#' filename <- make_filename(2013)
-#' accident_2013 <- fars_read(filename)
+#' # filename <- make_filename(2013)
+#' # accident_2013 <- fars_read(filename)
 fars_read <- function(filename) {
   if(!file.exists(filename))
     stop("file '", filename, "' does not exist")
@@ -86,7 +86,7 @@ make_filename <- function(year) {
 #'         the file name.
 #' @export
 #' @examples
-#' fars_read_years(2013)
+#' # fars_read_years(2013)
 #' # fars_read_years(2013:2015)
 fars_read_years <- function(years) {
   lapply(years, function(year) {
@@ -164,8 +164,8 @@ fars_summarize_years <- function(years) {
 #' @return A plot, showing the locations (longitud and latitude) of accidents in
 #'         the chosen state and year
 #' @export
-#' @examples
 #' # fars_map_state(state.num = 9, year = 2013)
+#' # fars_map_state(state.num = 1, year = 2014)
 fars_map_state <- function(state.num, year) {
   filename <- make_filename(year)
   data <- fars_read(filename)

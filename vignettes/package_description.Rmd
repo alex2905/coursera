@@ -41,9 +41,7 @@ month per year. The year corresponds to the dataset.
 ```{r, fig.show='hold', echo = FALSE, message=FALSE}
 library(coursera)
 library(dplyr)
-setwd("..")
 fars_summarize_years(2013)
-setwd("vignettes")
 ```
 
 ### `fars_map_state`
@@ -52,10 +50,7 @@ Plot the overview of the locations of each accident in one state in one year.
 ###### Example plot for state 1 in year 2013
 
 ```{r, fig.show='hold', echo = FALSE}
-library(coursera)
-setwd("..")
 fars_map_state(1,2013)
-setwd("vignettes")
 ```
 
 ### Details
