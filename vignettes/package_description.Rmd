@@ -19,7 +19,7 @@ knitr::opts_chunk$set(
 This package and the functions in it, use data from US National Highway Traffic 
 Safety Administration's Fatality Analysis Reporting System. The purpose is to 
 illustrate the correctness of the documentation and creation of a package.
-The purpose of the functions itself,is to show the accidents per state per 
+The purpose of the functions itself, is to show the accidents per state per 
 country for each year, where each year corresponds to a separate dataset.
 
 ## Function Info
@@ -36,15 +36,6 @@ for each observation. The `fars_summarize_years` function takes the previous dat
 as a starting point and calculates the overview of the number of accidents per 
 month per year. The year corresponds to the dataset.
 
-###### Example for number of accidents per month per year in the US
-
-```{r, fig.show='hold', echo = FALSE, message=FALSE}
-library(coursera)
-library(dplyr)
-setwd("..")
-fars_summarize_years(2013)
-setwd("vignettes")
-```
 
 ### `fars_map_state`
 Plot the overview of the locations of each accident in one state in one year.
