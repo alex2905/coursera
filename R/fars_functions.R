@@ -52,8 +52,8 @@ fars_read <- function(filename) {
 #'         accident_year.csv.bz2
 #' @export
 #' @examples
-#' # zipped_file <- make_filename(2013)
-#' # make_filename(2014)
+#' zipped_file <- make_filename(2013)
+#' make_filename(2014)
 make_filename <- function(year) {
   year <- as.integer(year)
   sprintf("data/accident_%d.csv.bz2", year)
