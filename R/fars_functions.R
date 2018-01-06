@@ -23,8 +23,8 @@
 #' @return A tibble dataframe containing the information of the csv file
 #' @export
 #' @examples
-#' # filename <- "inst/extdata/accident_2013.csv.bz2"
-#' # accident_2013 <- fars_read(filename)
+#' filename <- make_filename(2013)
+#' accident_2013 <- fars_read(filename)
 fars_read <- function(filename) {
   if(!file.exists(filename))
     stop("file '", filename, "' does not exist")
@@ -54,7 +54,8 @@ fars_read <- function(filename) {
 #' make_filename(2014)
 make_filename <- function(year) {
   year <- as.integer(year)
-  sprintf("inst/extdata/accident_%d.csv.bz2", year)
+  system.file("extdata", sprintf("accident_%d.csv.bz2", year),
+              package = "coursera")
 }
 
 
@@ -85,7 +86,8 @@ make_filename <- function(year) {
 #'         the file name.
 #' @export
 #' @examples
-#' # fars_read_years(2013)
+#' fars_read_years(2013)
+#' # fars_read_years(2013:2015)
 fars_read_years <- function(years) {
   lapply(years, function(year) {
     file <- make_filename(year)
@@ -125,6 +127,7 @@ fars_read_years <- function(years) {
 #' @export
 #' @examples
 #' # fars_summarize_years(2013)
+#' # fars_summarize_years(2013:2015)
 fars_summarize_years <- function(years) {
   dat_list <- fars_read_years(years)
   dplyr::bind_rows(dat_list) %>%
