@@ -14,7 +14,12 @@ knitr::opts_chunk$set(
 
 # coursera
 
-The goal of coursera is to ...
+This package and the functions in it, use data from US National Highway Traffic 
+Safety Administration's Fatality Analysis Reporting System. The purpose is to 
+illustrate the correctness of the documentation and creation of a package.
+The purpose of the functions itself, is to show the accidents per state per 
+country for each year, where each year corresponds to a separate dataset.
+For more details see the vignette of the package.
 
 ## Installation
 
@@ -25,10 +30,9 @@ You can install coursera from github with:
 devtools::install_github("alex2905/coursera")
 ```
 
-## Example
+## Example plot for state 1 in year 2013
 
-This is a basic example which shows you how to solve a common problem:
-
-```{r example}
-## basic example code
+```{r example, echo = FALSE}
+library(coursera)
+fars_map_state(1,2013)
 ```
